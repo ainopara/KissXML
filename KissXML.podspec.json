@@ -12,7 +12,11 @@
   },
   "source": {
     "git": "https://github.com/ainopara/KissXML.git",
-    "tag": "5.0"
+    "tag": "5.0.1"
+  },
+  "platforms": {
+    "ios": "6.0",
+    "osx": "10.8"
   },
   "source_files": "KissXML/**/*.{h,m}",
   "libraries": "xml2",
