@@ -1,5 +1,6 @@
 #import "DDXMLPrivate.h"
 #import "NSString+DDXML.h"
+#import <libxml/HTMLparser.h>
 
 #if ! __has_feature(objc_arc)
 #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
@@ -90,8 +91,12 @@
 	// 
 	// Therefore, we call it again here just to be safe.
 	xmlKeepBlanksDefault(0);
-	
-	xmlDocPtr doc = xmlParseMemory([data bytes], [data length]);
+    xmlDocPtr doc;
+    if (mask == 0) {
+        doc = htmlReadMemory([data bytes], (int)[data length], "", NULL, HTML_PARSE_NOWARNING | HTML_PARSE_NOERROR);
+    } else {
+        doc = xmlParseMemory([data bytes], [data length]);
+    }
 	if (doc == NULL)
 	{
 		if (error) *error = [NSError errorWithDomain:@"DDXMLErrorDomain" code:1 userInfo:nil];
