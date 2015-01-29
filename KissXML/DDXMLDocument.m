@@ -95,7 +95,7 @@
     if (mask == 0) {
         doc = htmlReadMemory([data bytes], (int)[data length], "", NULL, HTML_PARSE_NOWARNING | HTML_PARSE_NOERROR);
     } else {
-        doc = xmlParseMemory([data bytes], [data length]);
+        doc = xmlParseMemory([data bytes], (int)[data length]);
     }
 	if (doc == NULL)
 	{
