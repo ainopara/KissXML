@@ -562,7 +562,7 @@ static void MarkDeath(void *xmlPtr, DDXMLNode *wrapper);
 	if (node == NULL || node->doc == NULL)
 		return nil;
 	else
-		return [DDXMLDocument nodeWithDocPrimitive:node->doc owner:nil];
+		return [DDXMLDocument nodeWithDocPrimitive:node->doc owner:self];
 }
 
 /**
@@ -585,7 +585,7 @@ static void MarkDeath(void *xmlPtr, DDXMLNode *wrapper);
 	if (node->parent == NULL)
 		return nil;
 	else
-		return [DDXMLNode nodeWithUnknownPrimitive:(xmlKindPtr)node->parent owner:nil];
+		return [DDXMLNode nodeWithUnknownPrimitive:(xmlKindPtr)node->parent owner:self];
 }
 
 /**
