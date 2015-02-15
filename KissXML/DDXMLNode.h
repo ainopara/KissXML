@@ -98,6 +98,8 @@ enum {
 - (void)setName:(NSString *)name;
 - (NSString *)name;
 
+- (void)setOwner:(DDXMLNode *)node;
+- (DDXMLNode *)owner;
 //- (void)setObjectValue:(id)value;
 //- (id)objectValue;
 
