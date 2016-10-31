@@ -442,6 +442,13 @@ static void MarkDeath(void *xmlPtr, DDXMLNode *wrapper);
 	return name;
 }
 
+- (void)setOwner:(DDXMLNode *)node {
+    owner = node;
+}
+- (DDXMLNode *)owner {
+    return owner;
+}
+
 - (void)setStringValue:(NSString *)string
 {
 	// Note: DDXMLNamespaceNode overrides this method

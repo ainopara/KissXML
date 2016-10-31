@@ -84,6 +84,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, copy) NSString *name;
 
+- (void)setOwner:(DDXMLNode *)node;
+- (DDXMLNode *)owner;
 //- (void)setObjectValue:(id)value;
 //- (instancetype)objectValue;
 
